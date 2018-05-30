@@ -1,7 +1,7 @@
 {
 	"swagger": "2.0",
 	"info": {
-		"version": "2017-03-31",
+		"version": "4444-44-44",
 		"title": "AdvisorManagementClient",
 		"description": "REST APIs for Azure Advisor"
 	},

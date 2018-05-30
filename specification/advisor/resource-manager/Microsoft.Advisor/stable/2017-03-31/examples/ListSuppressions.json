@@ -1,7 +1,7 @@
 ﻿{
   "parameters": {
     "subscriptionId": "subscriptionId1",
-    "api-version": "2017-03-31"
+    "api-version": "4444-44-44"
   },
   "responses": {
     "200": {
