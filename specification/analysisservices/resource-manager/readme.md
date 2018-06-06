@@ -186,4 +186,8 @@ directive:
     from: analysisservices.json
     suppress: PageableOperation
     reason: ''
+  - where: '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/skus"].get'
+    from: analysisservices.json
+    suppress: PageableOperation
+    reason: ''
 ```
