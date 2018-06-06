@@ -29,15 +29,15 @@ openapi-type: arm
 tag: 1234-12
 ```
 
-
 ### Tag: 1234-12
 
 These settings apply only when `--tag=1234-12` is specified on the command line.
 
-```yaml $(tag) == '1234-12'
+``` yaml $(tag) == '1234-12'
 input-file:
   - Microsoft.AnalysisServices/stable/2017-08-01/analysisservices.json
 ```
+
 ### Tag: package-2017-08
 
 These settings apply only when `--tag=package-2017-08` is specified on the command line.
@@ -176,4 +176,14 @@ java:
   license-header: MICROSOFT_MIT_NO_CODEGEN
   payload-flattening-threshold: 1
   output-folder: $(azure-libraries-for-java-folder)/azure-mgmt-analysisservices
+```
+
+## Suppression
+
+``` yaml
+directive:
+  - where: '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/skus"].get'
+    from: analysisservices.json
+    suppress: PageableOperation
+    reason: ''
 ```
