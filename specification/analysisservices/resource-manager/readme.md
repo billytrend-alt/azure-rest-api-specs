@@ -190,4 +190,8 @@ directive:
     from: analysisservices.json
     suppress: PageableOperation
     reason: ''
+  - where: '$.paths["/subscriptions/{subscriptionId}/providers/Microsoft.AnalysisServices/locations/{location}/operationresults/{operationId}"].get'
+    from: analysisservices.json
+    suppress: LongRunningOperationsWithLongRunningExtension
+    reason: ''
 ```
