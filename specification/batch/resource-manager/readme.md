@@ -60,6 +60,10 @@ directive:
     from: BatchManagement.json
     suppress: PostOperationIdContainsUrlVerb
     reason: CASASA
+  - where: '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/regenerateKeys"].post.operationId'
+    from: BatchManagement.json
+    suppress: PostOperationIdContainsUrlVerb
+    reason: suppress it
 ```
 
 ### Tag: package-2017-05
