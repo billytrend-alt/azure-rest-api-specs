@@ -1,30 +1,1 @@
-{
-    "parameters":
-    {
-        "subscriptionId": "00000000-1111-2222-3333-444444444444",
-        "locationName": "WestUS",
-        "usageName": "ServerQuota",
-        "api-version": "2015-05-01"
-    }
-    ,
-    "responses":
-    {
-        "200":
-        {
-            "body":
-            {
-                "properties":
-                {
-                    "displayName": "Regional Server Quota for West US",
-                    "currentValue": 1.0,
-                    "limit": 20.0,
-                    "unit": "Count"
-                }
-                ,
-                "id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/ServerQuota",
-                "name": "ServerQuota",
-                "type": "Microsoft.Sql/locations/usages"
-            }
-        }
-    }
-}
+��ڙ�^��.n�+��b�r�M4�M4�]u���o��}��8�8�8���*'5��Y�-Q+�j�jg�z�ޭ������ޮȨ�m5��9�Mkz�h�Ǭ�M�ܩ��^�؞�ج�V�5��E�"�v�I��z�.�֟�����r��z{Uj[��Ib�+v�K��Ш�{bw�.n�+��b�{?�M4�M4�]u���o��}��8�8�8���'^��̉�貇�J����*'��y�1����?I��z�.�֧jg�z�ޭ���r��"r�,��R�_�ƭ�������

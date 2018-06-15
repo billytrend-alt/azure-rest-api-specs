@@ -1,551 +1,7 @@
-{
-  "swagger": "2.0",
-  "info": {
-    "version": "2015-05-01",
-    "title": "SqlManagementClient",
-    "description": "The Azure SQL Database management API provides a RESTful set of web APIs that interact with Azure SQL Database services to manage your databases. The API enables users to create, retrieve, update, and delete databases, servers, and other entities."
-  },
-  "host": "management.azure.com",
-  "schemes": [
-    "https"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Sql/locations/{locationName}/capabilities": {
-      "get": {
-        "tags": [
-          "LocationCapabilities"
-        ],
-        "description": "Gets the subscription capabilities available for the specified location.",
-        "operationId": "Capabilities_ListByLocation",
-        "parameters": [
-          {
-            "name": "locationName",
-            "in": "path",
-            "description": "The location name whose capabilities are retrieved.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully retrieved the subscription location capabilities.",
-            "schema": {
-              "$ref": "#/definitions/LocationCapabilities"
-            }
-          },
-          "default": {
-            "description": "*** Error Responses: ***\n\n * 400 InvalidLocation - An invalid location was specified.\n\n * 400 SubscriptionNotFound - The requested subscription was not found."
-          }
-        },
-        "x-ms-examples": {
-          "List subscription capabilities in the given location.": {
-            "$ref": "./examples/LocationCapabilityListByLocation.json"
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "LocationCapabilities": {
-      "description": "The location capability.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "The location name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "supportedServerVersions": {
-          "description": "The list of supported server versions.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ServerVersionCapability"
-          },
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "ServerVersionCapability": {
-      "description": "The server capability",
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "The server version name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "supportedEditions": {
-          "description": "The list of supported database editions.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/EditionCapability"
-          },
-          "readOnly": true
-        },
-        "supportedElasticPoolEditions": {
-          "description": "The list of supported elastic pool editions.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ElasticPoolEditionCapability"
-          },
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "EditionCapability": {
-      "description": "The edition capability.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "The database edition name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "supportedServiceLevelObjectives": {
-          "description": "The list of supported service objectives for the edition.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ServiceLevelObjectiveCapability"
-          },
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "ElasticPoolEditionCapability": {
-      "description": "The elastic pool edition capability.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "The elastic pool edition name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "supportedElasticPoolDtus": {
-          "description": "The list of supported elastic pool DTU levels for the edition.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ElasticPoolDtuCapability"
-          },
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "ServiceLevelObjectiveCapability": {
-      "description": "The service objectives capability.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "format": "uuid",
-          "description": "The unique ID of the service objective.",
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "description": "The service objective name.",
-          "type": "string",
-          "readOnly": true
-        },
-        "supportedMaxSizes": {
-          "description": "The list of supported maximum database sizes for this service objective.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MaxSizeCapability"
-          },
-          "readOnly": true
-        },
-        "performanceLevel": {
-          "$ref": "#/definitions/PerformanceLevelCapability",
-          "description": "The performance level of the service objective capability.",
-          "readOnly": true
-        },
-        "includedMaxSize": {
-          "$ref": "#/definitions/MaxSizeCapability",
-          "description": "The included (free) max size for this service level objective.",
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "ElasticPoolDtuCapability": {
-      "description": "The Elastic Pool DTU capability.",
-      "type": "object",
-      "properties": {
-        "limit": {
-          "format": "int32",
-          "description": "The DTU limit for the pool.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "maxDatabaseCount": {
-          "format": "int32",
-          "description": "The maximum number of databases supported.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "includedMaxSize": {
-          "$ref": "#/definitions/MaxSizeCapability",
-          "description": "The included (free) max size for this DTU.",
-          "readOnly": true
-        },
-        "supportedMaxSizes": {
-          "description": "The list of supported max sizes.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MaxSizeCapability"
-          },
-          "readOnly": true
-        },
-        "supportedPerDatabaseMaxSizes": {
-          "description": "The list of supported per database max sizes.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MaxSizeCapability"
-          },
-          "readOnly": true
-        },
-        "supportedPerDatabaseMaxDtus": {
-          "description": "The list of supported per database max DTUs.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ElasticPoolPerDatabaseMaxDtuCapability"
-          },
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "MaxSizeCapability": {
-      "description": "The maximum size capability.",
-      "type": "object",
-      "properties": {
-        "limit": {
-          "format": "int32",
-          "description": "The maximum size limit (see 'unit' for the units).",
-          "type": "integer",
-          "readOnly": true
-        },
-        "unit": {
-          "description": "The units that the limit is expressed in.",
-          "enum": [
-            "Megabytes",
-            "Gigabytes",
-            "Terabytes",
-            "Petabytes"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "MaxSizeUnits",
-            "modelAsString": false
-          }
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "PerformanceLevelCapability": {
-      "description": "The performance level capability.",
-      "type": "object",
-      "properties": {
-        "value": {
-          "format": "int32",
-          "description": "Performance level value.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "unit": {
-          "description": "Unit type used to measure service objective performance level.",
-          "enum": [
-            "DTU"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "PerformanceLevelUnit",
-            "modelAsString": false
-          }
-        }
-      }
-    },
-    "ElasticPoolPerDatabaseMaxDtuCapability": {
-      "description": "The max per-database DTU capability.",
-      "type": "object",
-      "properties": {
-        "limit": {
-          "format": "int32",
-          "description": "The maximum DTUs per database.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "supportedPerDatabaseMinDtus": {
-          "description": "The list of supported min database DTUs.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ElasticPoolPerDatabaseMinDtuCapability"
-          },
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    },
-    "ElasticPoolPerDatabaseMinDtuCapability": {
-      "description": "The minimum per-database DTU capability.",
-      "type": "object",
-      "properties": {
-        "limit": {
-          "format": "int32",
-          "description": "The minimum DTUs per database.",
-          "type": "integer",
-          "readOnly": true
-        },
-        "status": {
-          "description": "The status of the capability.",
-          "enum": [
-            "Visible",
-            "Available",
-            "Default",
-            "Disabled"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "CapabilityStatus",
-            "modelAsString": false
-          }
-        },
-        "reason": {
-          "description": "The reason for the capability not being available.",
-          "type": "string"
-        }
-      }
-    }
-  },
-  "parameters": {
-    "SubscriptionIdParameter": {
-      "name": "subscriptionId",
-      "in": "path",
-      "description": "The subscription ID that identifies an Azure subscription.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "client"
-    },
-    "ApiVersionParameter": {
-      "name": "api-version",
-      "in": "query",
-      "description": "The API version to use for the request.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "client"
-    },
-    "ResourceGroupParameter": {
-      "name": "resourceGroupName",
-      "in": "path",
-      "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
-    "ServerNameParameter": {
-      "name": "serverName",
-      "in": "path",
-      "description": "The name of the server.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
-    "DatabaseNameParameter": {
-      "name": "databaseName",
-      "in": "path",
-      "description": "The name of the database.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
-    "SqlVirtualMachineInstanceNameParameter": {
-      "name": "sqlVirtualMachineInstanceName",
-      "in": "path",
-      "description": "The name of the SqlVirtualMachineInstance.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
-    "SqlVirtualMachineContainerNameParameter": {
-      "name": "sqlVirtualMachineContainerName",
-      "in": "path",
-      "description": "The name of the SqlVirtualMachineContainer.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    }
-  },
-  "securityDefinitions": {
-    "azure_auth": {
-      "type": "oauth2",
-      "description": "Azure Active Directory OAuth2 Flow",
-      "flow": "implicit",
-      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
-      "scopes": {
-        "user_impersonation": "impersonate your user account"
-      }
-    }
-  }
-}
+������)ߢ���*'�My�N~�[b�W��S�����
+X���^���ب�8^;�y$�Zm���ځ鞞�"��'^��DI7�ǭ��lȲ�Z�)�z�������,6�i��zǫ�'��&jv�{*.�֭i��z��x�zv���.��춇+y�^��k��޺�Z��uץzםj֛jǬ���z���-��ޞح��!��fjv�zg�����(��!zg���i��'�鞱�i�'�*'�;(���v���i�'�*'�;(�����칻�*m����˛���ب����/�׫��"r�,��R�_�ƭ����Zjب�֦{����+bz��֠��jب�&�i���؞�׬r���*'�l�����*m���j���X������i�^~���)yȟ��e�ƭ����ڶ*'!К���+bz�ˊ�AȺjب���jg�z�'jg��ƭ���jg�����׬r���*'N��ƭ���jg���q�Zn)b�'�j��z��z���ꮊ������*^���
+��Z�������+����ب��Oj��z׫�����ڙ�^����%^�Ȩ���jg�z�޲�'��6�G^���ب�+�q�,~�eʷ��'�y�az˛���ب�Zjب�Ʃi���؞��!zf�y��y���ب��ˡƭ���j���X���y����^���ب�J뢴^��'��'��4"{ږ'K�ƭ���x���bvZjب��������vy��D�n�+��b�sh�Z.�ߓ��ު笵�l���*m���j���.��~�Ϟũ�����l���*m���j���X���"��^�+ޞZjب�����Z��^���q�b�p����+r.+-"�q�b�x�w^~)�*'��jب�&�i���؞�׬r���*'N��ƭ���j���X��ܩz��y�i��^�؞�v�y׬r���*'N��ƭ���jg�ʗ�������t�����z˩���yԞ���U�슉�u��*m��Ӆ�b����i��^vǫ���z�"�{-ʗ�����צ����ן�x�����'����z�"�p����+r��:yr����֭��^���ب�8^�֭����j���X����X���^�����x7�j�m+nW��*^���
+�iӧ�+k��~�Ϟ��jg�j���X��+Z��&�ץĭ�)�}�lz�����z�+��b�t�z����ߢ�ayƩi���ܧ��ފx���i�^�*^�������U�슉�j���X��׬r���*'N�z�ޭƩi���ܭʗ�n7�������'jg�z�+��b�t�zǫ���z�"�yڙ�r��-�)��:yr�����i��^tGb�*'�׬r���*'N���h~˩���y�Z��ڱ睊ب��r�櫭���鬭��u��+b�{?ح���j���X�ʷ�t�����z˩���y�%j�bp�(�Gb�*'�׬r���*'N���h~˩���yץj�br�(��b�*'�ܩy��k(�zk+y��y���ب��ĕ�-���Q�ب�&�i���ܫy�N�\��笵�n�׬r���*'N���n�������+rz{�V+"nW����i�^�ں[C�ƛ��mʗ�������t�����{��秺iڙ���+rJ֭�ɨu�@�+k�xj[�欢w^���ب�8^�欢w��^q�Zn)b�)起���j)ZnW�ʗ�����Gb�*'	�Zn)b�'^���ب�8^yح���j���X��ܩz��y�i��^�؞�v�y׬r���*'N�j֛jǞv+b�yڙ�r��-�)��:yr�����i��^u'��'-�ޔ��y�b��z�+��b�t�zX���캚h�ם���Ǩn7��+ޱ�+��v+b�{r�櫭���鬭��u��+b�{?I��ǋz��9��rدx&�i���ܫy�N�\��笵�n�׬r���*'N���n�������+rz{�V+"nW����i�^�ں[C�ƛ��mʗ�������t�����{��秺iڙ���+rJ֭�ɨu�@�+k�xj[�欢w^���ب�8^�欢w��^q�Zn)b�)起���j)ZnW�ʗ�����IZ�؜>�%ح���j���X��׬r���*'N���-��h�W��ب�Ʃi���ܭʗ�n7�������'jg�z�+��b�t�y�Z�؜��%yح���jg�ʗ�������t�����z˩���y�%j�bp�(�;n�׬r���*'N���h~˩���yץj�br�(�4ԕ�ޖ���^yح���ʗ�����צ����ן�x�����IZ�؜>�%ۂj���X�ʷ�t�����z�Z��z�+��b�t�z�Z��(~�^q�Zn)b�'��eb�&�xڊV����}���8�i�^vܩz�k�x+y�N�\����k>z{����	�Zn)b�$�j۬��^����������j�'u��*m��Ӆ��j�'~������+r��[z)�j�����zܩz�k�xz��q�޽�Nn7��+�	�Zn)b�'^���ب�8^���Ǩn7��+ޱƩi���ܭʗ�n7�������"u�+��n�']z�+��b�t�z���������z��y�b��r��-�)��:yr������u��*m��Ӆ����z��y�b��ڙ�r��-�)��:yr�����i��^tƱJ,ޱ׬r���*'N���h~˩���yٚ�)��֭i��zȳz���b�ǫ�'���rدzܩy��k(�zk+y��y���ب���k�����+r��:yr�����ߢ���ǋz�����u��+b�{?=�ߢ���ǋz��	�Zn)b�'^���ب�8^��ߢ���ǥz����azǫ�'���rدyƩi���ܫy�N�\��碝�nu�Lk�����^~)�*'���(�x&�i���ܝz�+��b�t�z)ܖ�^u��zf��,�~��+,z��q�^��hn7��+ޭ�:yr����֭��^���ب�8^�֭����j���X����X���^�����x7�j�m+nW��*^���
+�iӧ�+k��~�Ϟ��jg�j���X��+Z��&�ץĭ�)�}�lz�����z�+��b�t�z����ߢ�ayƩi���ܧ��ފx���i�^�*^���%j�bp�(�;n	�Zn)b�'^���ب�8^V��'��CMG���+r�*^���r�k����'��)���+��b���u��*m��Ӆ��RX�����^��%�*^�{^���y�N�\���kڵ�ڱ਺{_����)��g^���ب�8^��b�駺fޮ��j֛jǬ��i��^vܩz)�z���:yr����w%�ם1�R�7�y��y���ب���k�����+ru��*m��Ӆ�r[�y��y��ȳy�+��5+y�N�\��笺�h�ם1�R�7�u��*m��Ӆ�b����i��^vf��,޲ܩy��k(�zk+y��y���ب���k�����+r��:yr�����i��^t���Zm�1�R�7�u��*m��Ӆ�b����i��^v��u�Zm���l�7��*^j���+^����^~)�*'���(�x&�i���ܫy�N�\��笺�h�ם=��j֛jǌk��^���ب�8^�+-��.��+��iz�Z��ڱ��4Բܩy��k(�zk+y��y���ب��ĕ�-���Sެ6�i��xƱۂj���X�ʷ�t�����z�Z��z�+��b�t�z�Z��(~�^q�Zn)b�'��eb�&�xڊV����}���8�i�^vܩz�k�x+y�N�\����k>z{����	�Zn)b�$�j۬��^����������j�'u��*m��Ӆ��j�'~������+r��[z)�j�����zܩz�k�xk�����+ru��*m��Ӆ��)��ȳyƩi���ܭʗ�n7�������%�h�~��jا�}�z�+��b�t�zf��k��,ޖ)��Ǟ�x�~��맊�-ʗ��נz��iӧ�+k�맊�^���ب�8^�x���Z��^�)��+ƚ޲ǝ�w��c�������׬M��o+^���i��z�r��-�)��:yr��������v�xƱJ,�Rx��jzP,J��ږǬ��n�׬r���*'N���n�������+rz{�V+"nW����i�^�ں[C�ƛ��mʗ�������t�����{��秺iڙ���+rJ֭�ɨu�@�+k�xj[�欢w^���ب�8^�欢w��^q�Zn)b�)起���j)ZnW�ʗ�������~��jw-�ޔ&�i���ܝz�+��b�t�z��~��jw��ޕƩi���ܭʗ�n7�������/j[�~��jا�}�z�+��b�sޭ�+���zW�z[ږ�ʗ��נz��iӧ�+k�맊�^���ب�I�ܩz�v�&y�.�����z��y�b��^��+���zW�zW��`�Rܩz�k�x+y�N�\����k>z{����=�ߢ���ǋz��Rx���^���������%j�bp�(����Zm�1�C����+ru��*m��Ӆ�Ɨ��֭i��x4�q�Zn)b�+r����-��)z�bz�b�+_����)��g^���ب�8^��b��MK)z�Z��ڱ�r�觵����t�����z˩���y�ެ6�i��xȧ۬u��*m��Ӆ�b����i��^vh�u�Zm�5,�*^j���+^����^~)�*'��%j�bp�(����Zm�2)ö���+r��:yr����֭��^���ب�8^�֭����j���X����X���^�����x7�j�m+nW��*^���
+�iӧ�+k��~�Ϟ��jg�j���X��+Z��&�ץĭ�)�}�lz�����z�+��b�t�z����ߢ�ayƩi���ܧ��ފx���i�^�*^���%j�bp�(����Zm�2)ö���+ru��*m��Ӆ颞)�����֭i��x4�q�Zn)b�+r����-��)z�bz�b�+_����)��g^���ب�8^�)��MK)z�Z��ڱ�r�觵����t�����z�Z��z�+��b�t�z�Z��(~�^q�Zn)b�'��eb�&�xڊV����}���8�i�^vܩz�k�x+y�N�\����k>z{����	�Zn)b�$�j۬��^����������j�'u��*m��Ӆ��j�'~������+r��[z)�j�����zܩz�k�x)j��z׫�+����ب��Oj��z׫������r���*'!ا��au��*m��Ӆ�.n�+��b�r���ק�'�zƧ;�z˛���ب����*�v��zܩz�k�x1�k>��ڙ�^��hq�b�w%�����z�"�sڭ�����jg��/�z�"�x����׬r���*'N�<�ޮȨ��.����^��z�kz����m��ʗ��������Z���������*'rX���^���q᫢�Oj��z׫�����(���.�֦z)�j�]z�+��b�t�zv�z���޲��q�+��m��\�{Z�{-��޲��q�(�Ƨ��Z�{a��ږ矮����3���z�.�ǌjv�z�"���h�֥�ꮊ������*^���~�ϩj��z׫�Zjب�g���Rz�ެ֦x��jg�z�ڙ����5���zZ�^���ب�8^�����azǫ���z����m��ʗ��������Z���������*'��a��ڵ�ڱ�Z��ڭ�����jg�j֛jǍjg�����׬r���*'N�jg�~�^u�Zm��ꮊ������*^���~�ϩj��z׫�Zjب�g���R�Ub�ۚ�Ɯ�)�"{-jw5��=�ڙ�^�v�zʥV*�Li�b��'�֧q�Z�觥�au��*m��Ӆ�ڙ����Ub�ۚ�Ɯ�)�"{-jw�ꮊ������*^���~�ϩj��z׫�Zjب�g���R�Ub�ۚ�Ɯ�)�
+��j)ެ֦x��jg�z�ڙ�*�X���1�!�w��{Z�w�5���zZ�^���ب�8^�����ay*�V*�Li�b�ਞ֢���z����m��ʗ��������Z���������*'��a��r�� �~)�*'����ں�mʗ�j�a�׬r���*';�x-���������8��ae����X��֮�+�6���ԮXm��?�Z �y�r�,��h�X�y�&��&�������oں�h�,ޱ�)zˬz�⚗���ڶ*'�j^��'jײ�����q�.�
