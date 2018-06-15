@@ -1,44 +1,1 @@
-{
-    "parameters": {
-        "subscriptionId": "00000000-1111-2222-3333-444444444444",
-        "locationName": "WestUS",
-        "api-version": "2015-05-01"
-    },
-    "responses": {
-        "200": {
-            "body": {
-                "value": [{
-                    "properties": {
-                        "displayName": "Regional Server Quota for West US",
-                        "currentValue": 1.0,
-                        "limit": 20.0,
-                        "unit": "Count"
-                    },
-                    "id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/ServerQuota",
-                    "name": "ServerQuota",
-                    "type": "Microsoft.Sql/locations/usages"
-                }, {
-                    "properties": {
-                        "displayName": "Free Database Count per Subscription for West US",
-                        "currentValue": 0.0,
-                        "limit": 1.0,
-                        "unit": "Count"
-                    },
-                    "id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/SubscriptionFreeDatabaseCount",
-                    "name": "SubscriptionFreeDatabaseCount",
-                    "type": "Microsoft.Sql/locations/usages"
-                }, {
-                    "properties": {
-                        "displayName": "Free to Basic Database Upgrade count-down in West US",
-                        "currentValue": 365.0,
-                        "limit": 365.0,
-                        "unit": "Count"
-                    },
-                    "id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Sql/locations/Onebox/usages/SubscriptionFreeDatabaseDaysLeft",
-                    "name": "SubscriptionFreeDatabaseDaysLeft",
-                    "type": "Microsoft.Sql/locations/usages"
-                }]
-            }
-        }
-    }
-}
+��ڙ�^��.n�+��b�r�M4�M4�]u���o��}��8�8�8���*'5��Y�-Q&���ޮȨ�m5��9�Mkz�h�Ǭ�M�ܯj[���)z�bz�b��Z�֦y���ڕ'���к�Z~��z�TI˫���U�n{]%�h��M.�+B����칻�*m����M4�M4��u�_��m��}���8�8�8��k���z�?2'+���*��Zjب��Ν�����j��'���к�Z���I��z�.�֭ʗ���貇�J����*'���j���)z�bz�b��Z�֦xZ�x6�i��x*.��^�+����ب��+Y�-Q'.����V���4�)��].�+B����칻�*m����M4�M4��u�_��m��}���8�8�8��k���z�?2'+���*��Zjب��Ν�����j��+����ب�Z�x6�i��x*.��ڙ�n�+��b�qky�ڵ�ڱ਺{mʗ���貇�J����*'���j���)z�bz�b��Z�֦xZ�z�jȜ�Zm�R�+iל�����0�)�z�TI˫���U�n{~��X�����K��Ш�{bw�.n�+��b�{?�M4�M4�]u���o��}��8�8�8���'^��̉�貇�J����*'��y�1����?J��r���*'���Zm���-�흩�J��r���*'���Zm���-��*^2'+���*��Zjب��
