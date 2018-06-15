@@ -29,15 +29,15 @@ openapi-type: arm
 tag: 2018-07
 ```
 
-
 ### Tag: 2018-07
 
 These settings apply only when `--tag=2018-07` is specified on the command line.
 
-```yaml $(tag) == '2018-07'
+``` yaml $(tag) == '2018-07'
 input-file:
   - Microsoft.Batch/stable/2017-09-01/BatchManagement.json
 ```
+
 ### Tag: package-2017-09
 
 These settings apply only when `--tag=package-2017-09` is specified on the command line.
@@ -56,6 +56,10 @@ directive:
   - suppress: R2063
     from: BatchManagement.json
     reason: Bug in linter
+  - where: '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/syncAutoStorageKeys"].post.operationId'
+    from: BatchManagement.json
+    suppress: PostOperationIdContainsUrlVerb
+    reason: CASASA
 ```
 
 ### Tag: package-2017-05
