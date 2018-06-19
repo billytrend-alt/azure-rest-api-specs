@@ -1,36 +1,1 @@
-{
-  "parameters": {
-    "zoneName": "0.0.127.in-addr.arpa",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid",
-    "recordType": "PTR"
-  },
-  "responses": {
-    "200": {
-      "body": {
-        "nextLink": "https://servicehost/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/0.0.127.in-addr.arpa/PTR?api-version=2017-10-01&$skipToken=skipToken",
-        "value": [
-          {
-            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/0.0.127.in-addr.arpa/PTR/1",
-            "etag": "00000000-0000-0000-0000-000000000000",
-            "name": "1",
-            "type": "Microsoft.Network/dnsZones/PTR",
-            "properties": {
-              "metadata": {
-                "key1": "value1"
-              },
-              "TTL": 3600,
-              "fqdn": "1.0.0.127.in-addr.arpa",
-              "PTRRecords": [
-                {
-                  "ptrdname": "localhost"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    }
-  }
-}
+��ڙ�^����Z��4�n��v����޲��q᫢�Mjg��V���ޮȨ�m5��t�Ml���*m���v˛���r��O*^=4kz�h�Ǭ�M�ܧ{K�y!��l�����z,��.n�+��b�{?���w�޲��q᫢�l��5���'^��̉�貇�5�p��?v{�w��M5۸���]���k��E�b����*'

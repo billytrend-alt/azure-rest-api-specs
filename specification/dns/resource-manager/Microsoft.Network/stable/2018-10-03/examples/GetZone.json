@@ -1,32 +1,2 @@
-{
-  "parameters": {
-    "zoneName": "zone1",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid"
-  },
-  "responses": {
-    "200": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "location": "global",
-        "name": "zone1",
-        "type": "Microsoft.Network/dnsZones",
-        "properties": {
-          "maxNumberOfRecordSets": 5000,
-          "numberOfRecordSets": 2,
-          "nameServers": [
-            "ns1-01.azure-dns.com",
-            "ns2-01.azure-dns.net",
-            "ns3-01.azure-dns.org",
-            "ns4-01.azure-dns.info"
-          ]
-        },
-        "tags": {
-          "key1": "value1"
-        }
-      }
-    }
-  }
-}
+��ڙ�^����Z����kz�.�ǆ���5���Z�/�z�"�}�׿���5���r���*'!�.n'kz�h�Ǭ�M�ܢw�.n�+��b�{?���w�޲��q᫢�l��5���'^��̉�貇�5�p��?v{�w��:'{W�j4�M4�O��M>�M4�M4��4�M4�M4�Ihq�b�x%������Ή��ܩxȜ��(~�^�
++��g��'z�k����'���M�fެ��y�+u'���4�{�m��}���Rz�6���I��z�'�_�լ��(�{6�MZ�������g��լ��+�{8�MZ������w赨,�쵽�n{

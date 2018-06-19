@@ -1,40 +1,2 @@
-{
-  "parameters": {
-    "zoneName": "zone1",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid",
-    "relativeRecordSetName": "record1",
-    "recordType": "MX",
-    "parameters": {
-      "properties": {
-        "metadata": {
-          "key2": "value2"
-        }
-      }
-    }
-  },
-  "responses": {
-    "200": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1/MX/record1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "name": "record1",
-        "type": "Microsoft.Network/dnsZones/MX",
-        "properties": {
-          "metadata": {
-            "key2": "value2"
-          },
-          "TTL": 3600,
-          "fqdn": "record1.zone1",
-          "MXRecords": [
-            {
-              "preference": 0,
-              "exchange": "mail.contoso.com"
-            }
-          ]
-        }
-      }
-    }
-  }
-}
+��ڙ�^����Z����kz�.�ǆ���5���Z�/�z�"�}�׿���5���r���*'!�.n'kzV����y�+u'�5����(��ky�+u<�x��j��z׫������&z֝j֤{-�j[�ڷ����zʹѺ�'���r���*'��.n'��(���.���_鮋�u���Ȝ��(~�^�
++��g��'z��w������(��^��4�M4�M>�M4�M4��4�O��M4�M4�M'jg�y�+w[r��"r�,��Mz�(�Oݞ�h��?1zk����'���Zu�Z�춽�n{d�/~���������uΉ����y�+v�ky��zw��\���zf���'��(r�

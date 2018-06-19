@@ -1,39 +1,2 @@
-{
-  "parameters": {
-    "zoneName": "zone1",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid",
-    "relativeRecordSetName": "record1",
-    "recordType": "A",
-    "parameters": {
-      "properties": {
-        "metadata": {
-          "key2": "value2"
-        }
-      }
-    }
-  },
-  "responses": {
-    "200": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1/A/record1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "name": "record1",
-        "type": "Microsoft.Network/dnsZones/A",
-        "properties": {
-          "metadata": {
-            "key2": "value2"
-          },
-          "TTL": 3600,
-          "fqdn": "record1.zone1",
-          "ARecords": [
-            {
-              "ipv4Address": "127.0.0.1"
-            }
-          ]
-        }
-      }
-    }
-  }
-}
+��ڙ�^����Z����kz�.�ǆ���5���Z�/�z�"�}�׿���5���r���*'!�.n'kzV����y�+u'�5����(��ky�+u<�x
+Z�����즺)z�bzɞ��Z���kږ維�)�{�m4n�r��칻�*m����˛���z�.�ǆ��������k���z�?2'+���׭����f�޳�����r����Z�M4�M4��4�O��M>�M4�M4�M4�M4�v�z����u�*^2'+���׭����f�޳�)��^�؞�g�i֭jG������L���G�vz�r���:'{Py�+vȩ��v���]��M

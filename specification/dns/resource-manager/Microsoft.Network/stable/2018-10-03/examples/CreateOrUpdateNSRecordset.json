@@ -1,65 +1,3 @@
-{
-  "parameters": {
-    "zoneName": "zone1",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid",
-    "relativeRecordSetName": "record1",
-    "recordType": "NS",
-    "parameters": {
-      "properties": {
-        "metadata": {
-          "key1": "value1"
-        },
-        "TTL": 3600,
-        "NSRecords": [
-          {
-            "nsdname": "ns1.contoso.com"
-          }
-        ]
-      }
-    }
-  },
-  "responses": {
-    "200": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1/NS/record1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "name": "record1",
-        "type": "Microsoft.Network/dnsZones/NS",
-        "properties": {
-          "metadata": {
-            "key1": "value1"
-          },
-          "TTL": 3600,
-          "fqdn": "record1.zone1",
-          "NSRecords": [
-            {
-              "nsdname": "ns1.contoso.com"
-            }
-          ]
-        }
-      }
-    },
-    "201": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1/NS/record1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "name": "record1",
-        "type": "Microsoft.Network/dnsZones/NS",
-        "properties": {
-          "metadata": {
-            "key1": "value1"
-          },
-          "TTL": 3600,
-          "fqdn": "record1.zone1",
-          "NSRecords": [
-            {
-              "nsdname": "ns1.contoso.com"
-            }
-          ]
-        }
-      }
-    }
-  }
-}
+��ڙ�^����Z����kz�.�ǆ���5���Z�/�z�"�}�׿���5���r���*'!�.n'kzV����y�+u'�5����(��ky�+u<�xԩj��z׫������&z֝j֤{-oj[��4�߭45$^r�ݲ{�����\�{h��(������zʹѺ�'���r���*'��.n'��(���.���_鮋�u���Ȝ��(~�^�
++��g��'z��w��Կ��(��^��4�M4�M>�M4�M4��4�O��M4�M4�M'jg�y�+w[r��"r�,��Mz�(�Oݞ�h��?5*k����'���Zu�Z�쵽�n{T�/~���������uΉ��ԑy�+v��vv�z{5r����m�պ�'���r���*'��.n'��(���.���_鮋�u���Ȝ��(~�^�
++��g��'z��w��Կ��(��^��4�M4�M>�M4�M4��4�O��M4�M4�M'jg�y�+w[r��"r�,��Mz�(�Oݞ�h��?5*k����'���Zu�Z�쵽�n{T�/~���������uΉ��ԑy�+v��vv�z{5r����

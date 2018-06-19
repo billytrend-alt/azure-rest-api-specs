@@ -1,68 +1,1 @@
-{
-  "parameters": {
-    "zoneName": "zone1",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid",
-    "relativeRecordSetName": "record1",
-    "recordType": "MX",
-    "parameters": {
-      "properties": {
-        "metadata": {
-          "key1": "value1"
-        },
-        "TTL": 3600,
-        "MXRecords": [
-          {
-            "preference": 0,
-            "exchange": "mail.contoso.com"
-          }
-        ]
-      }
-    }
-  },
-  "responses": {
-    "200": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1/MX/record1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "name": "record1",
-        "type": "Microsoft.Network/dnsZones/MX",
-        "properties": {
-          "metadata": {
-            "key1": "value1"
-          },
-          "TTL": 3600,
-          "fqdn": "record1.zone1",
-          "MXRecords": [
-            {
-              "preference": 0,
-              "exchange": "mail.contoso.com"
-            }
-          ]
-        }
-      }
-    },
-    "201": {
-      "body": {
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/dnsZones/zone1/MX/record1",
-        "etag": "00000000-0000-0000-0000-000000000000",
-        "name": "record1",
-        "type": "Microsoft.Network/dnsZones/MX",
-        "properties": {
-          "metadata": {
-            "key1": "value1"
-          },
-          "TTL": 3600,
-          "fqdn": "record1.zone1",
-          "MXRecords": [
-            {
-              "preference": 0,
-              "exchange": "mail.contoso.com"
-            }
-          ]
-        }
-      }
-    }
-  }
-}
+��ڙ�^����Z����kz�.�ǆ���5���Z�/�z�"�}�׿���5���r���*'!�.n'kzV����y�+u'�5����(��ky�+u<�x��j��z׫������&z֝j֤{-oj[��4�߭41t^r�ݲ��}�ޝǴ{!jx���r����j޲�'��6�F�w(��˛���ب��칸�������xj躛?���/�׫��"r�,��Mz�(�Oݞ�h��?Ή��������uz֠�M4�M4�M4��4�O��M>�M4�M4�M4�����(��mʗ���貇�5�p��?v{�w���鮊^�؞�g�i֭jG������SL���G�vz�r���:'{SE�(��)��ޭ��{G�r��隊W(��,��&�M[�ܢw�.n�+��b�{?���w�޲��q᫢�l��5���'^��̉�貇�5�p��?v{�w��:'{_�_��r����Z�M4�M4��4�O��M>�M4�M4�M4�M4�v�z����u�*^2'+���׭����f�޳���)z�bzɞ��Z���[ږ�M2��M���y�+w\��L]���l���z��q���Z��j)\�{h��(
