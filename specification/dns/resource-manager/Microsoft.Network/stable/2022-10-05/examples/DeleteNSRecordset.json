@@ -1,14 +1,1 @@
-{
-  "parameters": {
-    "zoneName": "zone1",
-    "resourceGroupName": "rg1",
-    "api-version": "2017-10-01",
-    "subscriptionId": "subid",
-    "relativeRecordSetName": "record1",
-    "recordType": "NS"
-  },
-  "responses": {
-    "200": {},
-    "204": {}
-  }
-}
+��ڙ�^����Z����kz�.�ǆ���5���Z�/�z�"�}�׿���5���r���*'!�.n'kzV����y�+u'�5����(��ky�+u<�xԫz�h�Ǭ�M6�
