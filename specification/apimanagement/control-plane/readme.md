@@ -1,13 +1,13 @@
 # API Management Direct Control Plane Client
-    
+
 > see https://aka.ms/autorest
 
 This is the AutoRest configuration file for Direct Control Plane SDK for API Management.
 
-
-
 ---
-## Getting Started 
+
+## Getting Started
+
 To build the SDK for API Management, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,20 +15,46 @@ To build the SDK for API Management, simply [Install AutoRest](https://aka.ms/au
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
+### Basic Information
 
-
-### Basic Information 
 These are the global settings for the API Management Direct Control Plane API.
 
 ``` yaml
 openapi-type: default
-tag: package-2017-03
+tag: 3425-32
 ```
 
+
+### Tag: 3425-32
+
+These settings apply only when `--tag=3425-32` is specified on the command line.
+
+```yaml $(tag) == '3425-32'
+input-file:
+  - Microsoft.ApiManagement/preview/3425-32-32/apimanagement.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimapis.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimauthorizationservers.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimbackends.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimcertificates.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimemailtemplate.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimgroups.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimidentityprovider.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimloggers.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimopenidconnectproviders.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimportalsettings.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimproducts.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimproperties.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimquotas.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimreports.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimsubscriptions.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimtenant.json
+  - Microsoft.ApiManagement/preview/3425-32-32/apimusers.json
+```
 ### Tag: package-2017-03
 
 These settings apply only when `--tag=package-2017-03` is specified on the command line.
