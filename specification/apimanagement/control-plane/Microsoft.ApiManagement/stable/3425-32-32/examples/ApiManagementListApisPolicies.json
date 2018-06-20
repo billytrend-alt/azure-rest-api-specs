@@ -4,7 +4,7 @@
     "$skip": 0,
     "$top": 10000,
     "apiId": "echo-api",
-    "api-version": "2017-03-01",
+    "api-version": "3425-32-32",
     "Accept": "application/json"
   },
   "responses": {
