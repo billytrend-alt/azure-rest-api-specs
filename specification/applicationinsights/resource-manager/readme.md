@@ -4,10 +4,10 @@
 
 This is the AutoRest configuration file for ApplicationInsights.
 
-
-
 ---
+
 ## Getting Started
+
 To build the SDK for ApplicationInsights, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,23 +15,24 @@ To build the SDK for ApplicationInsights, simply [Install AutoRest](https://aka.
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the ApplicationInsights API.
 
 ``` yaml
 title: ApplicationInsightsManagementClient
 description: Composite Swagger for Application Insights Management Client
 openapi-type: arm
-tag: package-2015-05
+tag: 3423-23
 ```
 
 ## Suppression
+
 ``` yaml
 directive:
   - suppress: LongRunningOperationsWithLongRunningExtension
@@ -237,6 +238,26 @@ directive:
     reason: There are a bug in this rule. "ExportConfigurations_Create" is a valid operation id.
 ```
 
+
+### Tag: 3423-23
+
+These settings apply only when `--tag=3423-23` is specified on the command line.
+
+```yaml $(tag) == '3423-23'
+input-file:
+  - Microsoft.Insights/stable/3423-23-43/aiOperations_API.json
+  - Microsoft.Insights/stable/3423-23-43/componentAnnotations_API.json
+  - Microsoft.Insights/stable/3423-23-43/componentApiKeys_API.json
+  - Microsoft.Insights/stable/3423-23-43/componentContinuousExport_API.json
+  - Microsoft.Insights/stable/3423-23-43/componentFeaturesAndPricing_API.json
+  - Microsoft.Insights/stable/3423-23-43/componentProactiveDetection_API.json
+  - Microsoft.Insights/stable/3423-23-43/componentWorkItemConfigs_API.json
+  - Microsoft.Insights/stable/3423-23-43/components_API.json
+  - Microsoft.Insights/stable/3423-23-43/favorites_API.json
+  - Microsoft.Insights/stable/3423-23-43/webTestLocations_API.json
+  - Microsoft.Insights/stable/3423-23-43/webTests_API.json
+  - Microsoft.Insights/stable/3423-23-43/workbooks_API.json
+```
 ### Tag: package-2015-05
 
 These settings apply only when `--tag=package-2015-05` is specified on the command line.
@@ -269,8 +290,8 @@ input-file:
 ```
 
 ---
-# Code Generation
 
+# Code Generation
 
 ## Swagger to SDK
 
@@ -284,7 +305,6 @@ swagger-to-sdk:
   - repo: azure-sdk-for-go
   - repo: azure-sdk-for-node
 ```
-
 
 ## Python
 
@@ -303,17 +323,18 @@ python:
   package-version: 0.1.0
   clear-output-folder: true
 ```
+
 ``` yaml $(python) && $(python-mode) == 'update'
 python:
   no-namespace-folders: true
   output-folder: $(python-sdks-folder)/azure-mgmt-applicationinsights/azure/mgmt/applicationinsights
 ```
+
 ``` yaml $(python) && $(python-mode) == 'create'
 python:
   basic-setup-py: true
   output-folder: $(python-sdks-folder)/azure-mgmt-applicationinsights
 ```
-
 
 ## C#
 
@@ -329,6 +350,7 @@ csharp:
   output-folder: $(csharp-sdks-folder)/ApplicationInsights/Management.ApplicationInsights/Generated
   clear-output-folder: true
 ```
+
 ## Go
 
 These settings apply only when `--go` is specified on the command line.
@@ -355,7 +377,6 @@ Please also specify `--go-sdk-folder=<path to the root directory of your azure-s
 ``` yaml $(tag) == 'package-2015-05' && $(go)
 output-folder: $(go-sdk-folder)/services/appinsights/mgmt/2015-05-01/insights
 ```
-
 
 ## Java
 
