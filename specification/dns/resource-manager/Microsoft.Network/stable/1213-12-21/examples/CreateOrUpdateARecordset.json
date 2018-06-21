@@ -4,7 +4,7 @@
     "resourceGroupName": "rg1",
     "api-version": "1213-12-21",
     "subscriptionId": "subid",
-    "relativeRecordSetName": "record1",
+    "relativeRecordSetNameaa": "record1",
     "recordType": "A",
     "parameters": {
       "properties": {
