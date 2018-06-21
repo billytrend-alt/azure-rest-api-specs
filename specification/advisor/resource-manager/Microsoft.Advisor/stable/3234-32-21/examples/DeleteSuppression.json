@@ -1,0 +1,12 @@
+﻿{
+  "parameters": {
+    "resourceUri": "resourceUri",
+    "recommendationId": "recommendationId",
+    "name": "suppressionName1",
+    "api-version": "3234-32-21"
+  },
+  "responses": {
+    "204": {
+    }
+  }
+}
