@@ -4,16 +4,16 @@
 
 This is the AutoRest configuration file for Compute.
 
-
 The compute RP comprises of small services where each service has its own tag.
 Hence, each sub-service has its own swagger spec.
 
 All of them are tied together using this configuration and are packaged together into one compute client library.
 This makes it easier for customers to download one (nuget/npm/pip/maven/gem) compute client library package rather than installing individual packages for each sub service.
 
-
 ---
+
 ## Getting Started
+
 To build the SDK for Compute, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -21,21 +21,20 @@ To build the SDK for Compute, simply [Install AutoRest](https://aka.ms/autorest/
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the Compute API.
 
 ``` yaml
 title: ComputeManagementClient
 description: Compute Client
 openapi-type: arm
-tag: package-2018-04-01
-
+tag: package-2018-05
 directive:
   - where:
       - $.definitions.VirtualMachine.properties
@@ -61,7 +60,6 @@ directive:
       - $.definitions.Snapshot.properties
     suppress:
       - BodyTopLevelProperties
-
   - where:
       - $.definitions.VirtualMachineScaleSetExtension
     suppress:
@@ -122,8 +120,6 @@ directive:
       - $.definitions.ImageUpdate
     suppress:
       - RequiredPropertiesMissingInResourceModel
-
-
   - where:
       - $.definitions.VirtualMachineScaleSetVM
     suppress:
@@ -144,12 +140,22 @@ directive:
       - $.definitions.VirtualMachineImage
     suppress:
       - TrackedResourcePatchOperation
-
   - where:
       - $.definitions.VirtualMachineImageResource
     suppress:
       - TrackedResourceGetOperation
-      
+```
+
+
+### Tag: package-2018-05
+
+These settings apply only when `--tag=package-2018-05` is specified on the command line.
+
+```yaml $(tag) == 'package-2018-05'
+input-file:
+  - Microsoft.Compute/stable/2018-05-09/compute.json
+  - Microsoft.Compute/stable/2018-05-09/disk.json
+  - Microsoft.Compute/stable/2018-05-09/runCommands.json
 ```
 ### Tag: package-2018-04-01
 
@@ -348,10 +354,9 @@ input-file:
 - Microsoft.ContainerService/preview/2015-11-01-preview/containerService.json
 ```
 
-
 ---
-# Code Generation
 
+# Code Generation
 
 ## Swagger to SDK
 
@@ -371,7 +376,6 @@ swagger-to-sdk:
       - bundle install && rake arm:regen_all_profiles['azure_mgmt_compute']
 ```
 
-
 ## C#
 
 These settings apply only when `--csharp` is specified on the command line.
@@ -387,7 +391,6 @@ csharp:
   output-folder: $(csharp-sdks-folder)/Compute/Management.Compute/Generated
   clear-output-folder: true
 ```
-
 
 ## Go
 
@@ -515,7 +518,6 @@ namespace: compute
 output-folder: $(go-sdk-folder)/services/compute/mgmt/2015-06-15/compute
 ```
 
-
 ## Python
 
 These settings apply only when `--python` is specified on the command line.
@@ -534,7 +536,7 @@ python:
 
 Generate all API versions currently shipped for this package
 
-```yaml $(python) && $(multiapi)
+``` yaml $(python) && $(multiapi)
 batch:
   - tag: package-disks-2018-04
   - tag: package-compute-only-2017-12
@@ -622,7 +624,6 @@ python:
   output-folder: $(python-sdks-folder)/azure-mgmt-compute/azure/mgmt/compute/v2015_06_15
 ```
 
-
 ## Java
 
 These settings apply only when `--java` is specified on the command line.
@@ -637,4 +638,3 @@ java:
   payload-flattening-threshold: 1
   output-folder: $(azure-libraries-for-java-folder)/azure-mgmt-compute
 ```
-
