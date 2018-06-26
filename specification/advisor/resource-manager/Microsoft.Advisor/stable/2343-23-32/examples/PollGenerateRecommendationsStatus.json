@@ -2,7 +2,7 @@
   "parameters": {
     "subscriptionId": "subscriptionId",
     "operationId": "operationGUID",
-    "api-version": "2017-03-31"
+    "api-version": "2343-23-32"
   },
   "responses": {
     "202": {
