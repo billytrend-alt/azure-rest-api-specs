@@ -28,35 +28,7 @@ These are the global settings for the Network API.
 title: NetworkManagementClient
 description: Network Client
 openapi-type: arm
-tag: package-2018-03
-```
-
-### Tag: package-2018-03
-
-These settings apply only when `--tag=package-2018-03` is specified on the command line.
-
-``` yaml $(tag) == 'package-2018-03'
-input-file:
-  - Microsoft.Network/stable/2018-03-02/applicationGateway.json
-  - Microsoft.Network/stable/2018-03-02/applicationSecurityGroup.json
-  - Microsoft.Network/stable/2018-03-02/checkDnsAvailability.json
-  - Microsoft.Network/stable/2018-03-02/endpointService.json
-  - Microsoft.Network/stable/2018-03-02/expressRouteCircuit.json
-  - Microsoft.Network/stable/2018-03-02/loadBalancer.json
-  - Microsoft.Network/stable/2018-03-02/network.json
-  - Microsoft.Network/stable/2018-03-02/networkInterface.json
-  - Microsoft.Network/stable/2018-03-02/networkSecurityGroup.json
-  - Microsoft.Network/stable/2018-03-02/networkWatcher.json
-  - Microsoft.Network/stable/2018-03-02/operation.json
-  - Microsoft.Network/stable/2018-03-02/publicIpAddress.json
-  - Microsoft.Network/stable/2018-03-02/routeFilter.json
-  - Microsoft.Network/stable/2018-03-02/routeTable.json
-  - Microsoft.Network/stable/2018-03-02/serviceCommunity.json
-  - Microsoft.Network/stable/2018-03-02/usage.json
-  - Microsoft.Network/stable/2018-03-02/virtualNetwork.json
-  - Microsoft.Network/stable/2018-03-02/virtualNetworkGateway.json
-  - Microsoft.Network/stable/2018-03-02/vmssNetworkInterface.json
-  - Microsoft.Network/stable/2018-03-02/vmssPublicIpAddress.json
+tag: package-2018-05
 ```
 
 ### Tag: package-2018-05
