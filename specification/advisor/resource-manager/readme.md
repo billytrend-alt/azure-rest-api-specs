@@ -26,18 +26,27 @@ These are the global settings for the Advisor API.
 
 ``` yaml
 openapi-type: arm
-tag: package-3234-32
+tag: package-2343-23
 ```
 
 
+### Tag: package-2343-23
+
+These settings apply only when `--tag=package-2343-23` is specified on the command line.
+
+```yaml $(tag) == 'package-2343-23'
+input-file:
+  - Microsoft.Advisor/stable/2343-23-32/advisor.json
+```
 ### Tag: package-3234-32
 
 These settings apply only when `--tag=package-3234-32` is specified on the command line.
 
-```yaml $(tag) == 'package-3234-32'
+``` yaml $(tag) == 'package-3234-32'
 input-file:
   - Microsoft.Advisor/stable/3234-32-21/advisor.json
 ```
+
 ### Tag: package-2017-04
 
 These settings apply only when `--tag=package-2017-04` is specified on the command line.
