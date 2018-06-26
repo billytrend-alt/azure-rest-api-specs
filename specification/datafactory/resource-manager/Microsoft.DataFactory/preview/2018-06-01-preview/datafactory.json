@@ -44,7 +44,7 @@
             "$ref": "./examples/Operations_List.json"
           }
         },
-        "description": "Lists the available Azure Data Factory API operations.",
+        "description": "Editing descriptions for testing --- Lists the available Azure Data Factory API operations.",
         "parameters": [
           {
             "$ref": "#/parameters/api-version"
