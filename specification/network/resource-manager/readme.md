@@ -31,12 +31,11 @@ openapi-type: arm
 tag: package-2018-03
 ```
 
-
 ### Tag: package-2018-03
 
 These settings apply only when `--tag=package-2018-03` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-03'
+``` yaml $(tag) == 'package-2018-03'
 input-file:
   - Microsoft.Network/stable/2018-03-02/applicationGateway.json
   - Microsoft.Network/stable/2018-03-02/applicationSecurityGroup.json
@@ -59,6 +58,7 @@ input-file:
   - Microsoft.Network/stable/2018-03-02/vmssNetworkInterface.json
   - Microsoft.Network/stable/2018-03-02/vmssPublicIpAddress.json
 ```
+
 ### Tag: package-2018-05
 
 These settings apply only when `--tag=package-2018-05` is specified on the command line.
@@ -770,11 +770,15 @@ directive:
   - suppress: RequiredPropertiesMissingInResourceModel
     from: networkwatcher.json
     where: $.definitions.NetworkWatcher
-    reason: Network watcher has reference on resource in network.json which contain 'name, 'id' and 'type'
+    reason: 'Network watcher has reference on resource in network.json which contain ''name, ''id'' and ''type'''
   - suppress: DefinitionsPropertiesNamesCamelCase
     from: networkwatcher.json
     where: $.definitions.ProtocolConfiguration.properties.HTTPConfiguration
     reason: Accidentally shipped with wrong casing – however fixing the casing is introducing a breaking change which is worse than living with the naming violation
+  - where: $.definitions.ApplicationGatewayBackendHttpSettingsPropertiesFormat.properties.port.description
+    from: applicationGateway.json
+    suppress: DescriptionMustNotBeNodeName
+    reason: ''
 ```
 
 ### Tag: package-2018-01 and go
